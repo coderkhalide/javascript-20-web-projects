@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Template</title>
+  <link rel="icon" type="image/jpg"
+    href="https://avatars1.githubusercontent.com/u/58379216?s=400&u=b0303fb571790457f1ce4ba9b45af523ba11c465&v=4">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <button id="add-bookmark-button">
+    ADD BOOKMARK
+  </button>
+  <div id="all-bookmark"></div>
+  <div id="overlay"></div>
+  <div class="add-bookmark-container inactive" hidden>
+    <div class="add-bookmark-title">
+      <p>Add Bookmark</p>
+      <p>×</p>
+    </div>
+    <form id="add-bookmark-form">
+      <label for="website-name">Website Name</label>
+      <input type="text" id="website-name">
+      <label for="website-url">Website URL</label>
+      <input type="text" id="website-url">
+      <button type="submit">Save</button>
+    </form>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika&display=swap');
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ff00ec' fill-opacity='0.15'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10zm10 8c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm40 40c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ブックマーク作成ボタン */
+
+#add-bookmark-button {
+  margin: 20px 0;
+  width: 150px;
+  height: 50px;
+  background-color: deeppink;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 3px 9px rgba(0, 0, 0, .7);
+  cursor: pointer;
+}
+
+#add-bookmark-button:hover {
+  filter: brightness(120%);
+}
+
+#add-bookmark-button:active {
+  transform: scale(0.9);
+}
+
+#add-bookmark-button:focus {
+  outline: 0;
+}
+
+/* ブックマーク全体 */
+#all-bookmark {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 95vw;
+}
+
+
+/* ブックマーク個別 */
+.bookmark-container {
+  color: white;
+  background-color: hotpink;
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.bookmark-container:hover {
+  filter: brightness(120%)
+}
+
+.bookmark-container>i {
+  align-self: flex-end;
+}
+
+.bookmark-container>i:hover {
+  cursor: pointer;
+  color: deeppink;
+}
+
+.bookmark {
+  text-decoration: none;
+  color: white;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.bookmark>img {
+  margin-right: 2px;
+  width: 22x;
+  height: 22px
+}
+
+.bookmark>span:hover {
+  border-bottom: 1px solid white;
+}
+
+/* オーバーレイ */
+#overlay.active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* ブックマークフォーム */
+.add-bookmark-container.inactive {
+  display: none;
+}
+
+.add-bookmark-container {
+  width: 400px;
+  height: 250px;
+  background: rgba(255, 120, 210, 0.4);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, .3);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-125px);
+}
+
+.add-bookmark-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: deeppink;
+  color: white;
+  height: 20%;
+  padding: 0 15px;
+}
+
+.add-bookmark-title>p:last-of-type:hover {
+  transform: scale(1.5);
+  cursor: pointer;
+}
+
+form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  color: black;
+}
+
+label,
+input {
+  display: block;
+}
+
+input {
+  border: none;
+  outline: none;
+  height: 13%;
+}
+
+form input:first-of-type {
+  margin-bottom: 10px;
+}
+
+form input:last-of-type {
+  margin-bottom: 20px;
+}
+
+button[type="submit"] {
+  width: 30%;
+  height: 13%;
+  border: none;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, .3);
+  outline: none;
+}
+
+button[type="submit"]:hover,
+button[type="submit"]:active {
+  background-color: deeppink;
+  color: white;
+}
+
+button[type="submit"]:active {
+  transform: scale(0.95);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, .3);
+}
+
+@media screen and (max-width: 400px) {
+  .add-bookmark-container {
+    width: 300px;
+    height: 188px;
+    transform: translateY(-94px);
+  }
+
+  form input:first-of-type {
+    margin-bottom: 5px;
+  }
+
+  form input:last-of-type {
+    margin-bottom: 10px;
+  }
+
+  .bookmark {
+    font-size: 10px;
+  }
+}
