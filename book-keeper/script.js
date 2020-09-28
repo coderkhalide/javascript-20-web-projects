@@ -80,10 +80,10 @@ const addBookmark = (event) => {
   const websiteNameValue = event.srcElement[0].value;
   const websiteURLValue = event.srcElement[1].value;
   addBookmarkElement(websiteNameValue, websiteURLValue);
-  hideAddBookmarkForm();
   event.srcElement[0].value = "";
   event.srcElement[1].value = "";
   updateLocalStorage();
+  websiteName.focus();
 };
 
 const deleteBookmark = (event) => {
