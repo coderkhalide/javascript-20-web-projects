@@ -17,12 +17,12 @@
   </button>
   <div id="all-bookmark"></div>
   <div id="overlay"></div>
-  <div class="add-bookmark-container inactive" hidden>
+  <div class="add-bookmark-container" id="add-bookmark-container">
     <div class="add-bookmark-title">
       <p>Add Bookmark</p>
-      <p>×</p>
+      <p id="form-close-button">×</p>
     </div>
-    <form id="add-bookmark-form">
+    <form id="add-bookmark-form" autocomplete="off">
       <label for="website-name">Website Name</label>
       <input type="text" id="website-name">
       <label for="website-url">Website URL</label>

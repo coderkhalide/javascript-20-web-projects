@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Signika&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Signika&display=swap");
 
 html {
   box-sizing: border-box;
@@ -25,7 +25,7 @@ body {
   color: white;
   border: none;
   border-radius: 10px;
-  box-shadow: 0 3px 9px rgba(0, 0, 0, .7);
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.7);
   cursor: pointer;
 }
 
@@ -35,6 +35,7 @@ body {
 
 #add-bookmark-button:active {
   transform: scale(0.9);
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.4);
 }
 
 #add-bookmark-button:focus {
@@ -49,7 +50,6 @@ body {
   width: 95vw;
 }
 
-
 /* ブックマーク個別 */
 .bookmark-container {
   color: white;
@@ -63,14 +63,14 @@ body {
 }
 
 .bookmark-container:hover {
-  filter: brightness(120%)
+  filter: brightness(120%);
 }
 
-.bookmark-container>i {
+.bookmark-container > i {
   align-self: flex-end;
 }
 
-.bookmark-container>i:hover {
+.bookmark-container > i:hover {
   cursor: pointer;
   color: deeppink;
 }
@@ -83,13 +83,13 @@ body {
   align-items: center;
 }
 
-.bookmark>img {
-  margin-right: 2px;
-  width: 22x;
-  height: 22px
+.bookmark > img {
+  margin-right: 5px;
+  width: 18x;
+  height: 18px;
 }
 
-.bookmark>span:hover {
+.bookmark > span:hover {
   border-bottom: 1px solid white;
 }
 
@@ -104,20 +104,30 @@ body {
 }
 
 /* ブックマークフォーム */
-.add-bookmark-container.inactive {
+.add-bookmark-container {
   display: none;
 }
 
-.add-bookmark-container {
+.add-bookmark-container.active {
   width: 400px;
   height: 250px;
   background: rgba(255, 120, 210, 0.4);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, .3);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
   position: fixed;
   top: 50%;
   transform: translateY(-125px);
+  animation: appear 1s ease-out;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .add-bookmark-title {
@@ -130,9 +140,13 @@ body {
   padding: 0 15px;
 }
 
-.add-bookmark-title>p:last-of-type:hover {
+.add-bookmark-title > p:last-of-type:hover {
   transform: scale(1.5);
   cursor: pointer;
+}
+
+.add-bookmark-title > p:last-of-type:active {
+  transform: scale(1);
 }
 
 form {
@@ -169,7 +183,8 @@ button[type="submit"] {
   border: none;
   background-color: white;
   border-radius: 5px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, .3);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
   outline: none;
 }
 
@@ -181,11 +196,11 @@ button[type="submit"]:active {
 
 button[type="submit"]:active {
   transform: scale(0.95);
-  box-shadow: 0 3px 10px rgba(0, 0, 0, .3);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
 }
 
 @media screen and (max-width: 400px) {
-  .add-bookmark-container {
+  .add-bookmark-container.active {
     width: 300px;
     height: 188px;
     transform: translateY(-94px);
